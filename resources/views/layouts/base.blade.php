@@ -8,6 +8,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -16,6 +19,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/flexslider.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick-theme.css') }}">
+
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     {{-- datetimepicker --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw==" crossorigin="anonymous" />    @livewireStyles
@@ -48,83 +54,61 @@
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item lang-menu menu-item-has-children parent">
-									<a title="English" href="#"><span class="img label-before"><img src="assets/images/lang-en.png" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-									<ul class="submenu lang" >
-										<li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="assets/images/lang-hun.png" alt="lang-hun"></span>Hungary</a></li>
-										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="assets/images/lang-ger.png" alt="lang-ger" ></span>German</a></li>
-										<li class="menu-item" ><a title="french" href="#"><span class="img label-before"><img src="assets/images/lang-fra.png" alt="lang-fre"></span>French</a></li>
-										<li class="menu-item" ><a title="canada" href="#"><span class="img label-before"><img src="assets/images/lang-can.png" alt="lang-can"></span>Canada</a></li>
-									</ul>
-								</li>
-								<li class="menu-item menu-item-has-children parent" >
-									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-									<ul class="submenu curency" >
-										<li class="menu-item" >
-											<a title="Pound (GBP)" href="#">Pound (GBP)</a>
-										</li>
-										<li class="menu-item" >
-											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
-										</li>
-										<li class="menu-item" >
-											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
-										</li>
-									</ul>
-								</li>
 
-                                @if(Route::has('login'))
-                                    @auth
-                                        @if (Auth::user()->utype === 'ADM')
-                                            <li class="menu-item menu-item-has-children parent" >
-                                                <a title="My Account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                                <ul class="submenu curency" >
-                                                    <li class="menu-item" >
-                                                        <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
-                                                    </li>
-                                                    <li class="menu-item" >
-                                                        <a title="Manage Categories" href="{{ route('admin.categories') }}">Manage Categories</a>
-                                                    </li>
-                                                    <li class="menu-item" >
-                                                        <a title="Manage Products" href="{{ route('admin.products') }}">Manage Products</a>
-                                                    </li>
-                                                    <li class="menu-item" >
-                                                        <a title="Manage Home Slider" href="{{ route('admin.homeslider') }}">Manage Home Slider</a>
-                                                    </li>
-                                                    <li class="menu-item" >
-                                                        <a title="Manage Home Slider" href="{{ route('admin.homecategories') }}">Manage Home Categories</a>
-                                                    </li>
-                                                    <li class="menu-item" >
-                                                        <a title="Manage Home Slider" href="{{ route('admin.sale') }}">Sale Setting</a>
-                                                    </li>
-                                                    <form id='logout-form' method="POST" action="{{ route('logout') }}" >
-                                                        @csrf
-                                                        <li class="menu-item" >
-                                                            <a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit(); ">Logout</a>
-                                                        </li>
-                                                    </form>
-                                                </ul>
-                                            </li>
-                                        @else
-                                            <li class="menu-item menu-item-has-children parent" >
-                                                <a title="My Account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                                <ul class="submenu curency" >
-                                                    <li class="menu-item" >
-                                                        <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
-                                                    </li>
+                            @if(Route::has('login'))
+                                @auth
+                                    @if (Auth::user()->utype === 'ADM')
+                                        <li class="menu-item menu-item-has-children parent" >
+                                            <a title="My Account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                            <ul class="submenu curency" >
+                                                <li class="menu-item" >
+                                                    <a title="Manage Home Slider" href="{{ route('admin.homeslider') }}">Manage Home Slider</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Manage Products" href="{{ route('admin.products') }}">Manage Products</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Manage Categories" href="{{ route('admin.categories') }}">Manage Categories</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Manage Home Slider" href="{{ route('admin.orders') }}">Show Orders</a>
+                                                </li>
+
+                                                <li class="menu-item" >
+                                                    <a title="Manage Home Slider" href="{{ route('admin.homecategories') }}">Manage Home Categories</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Manage Home Slider" href="{{ route('admin.sale') }}">Sale Setting</a>
+                                                </li>
+                                                <form id='logout-form' method="POST" action="{{ route('logout') }}" >
+                                                    @csrf
                                                     <li class="menu-item" >
                                                         <a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit(); ">Logout</a>
                                                     </li>
-                                                    <form id='logout-form' method="POST" action="{{ route('logout') }}" >
-                                                        @csrf
-                                                    </form>
-                                                </ul>
-                                            </li>
-                                        @endif
+                                                </form>
+                                            </ul>
+                                        </li>
                                     @else
-                                        <li class="menu-item" ><a title="Register or Login" href="{{ route('login') }}">Login</a></li>
-                                        <li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li>
+                                        <li class="menu-item menu-item-has-children parent" >
+                                            <a title="My Account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                            <ul class="submenu curency" >
+                                                <li class="menu-item" >
+                                                    <a title="Dashboard" href="{{ route('user.dashboard') }}">Dashboard</a>
+                                                </li>
+                                                <li class="menu-item" >
+                                                    <a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit(); ">Logout</a>
+                                                </li>
+                                                <form id='logout-form' method="POST" action="{{ route('logout') }}" >
+                                                    @csrf
+                                                </form>
+                                            </ul>
+                                        </li>
                                     @endif
+                                @else
+                                    <li class="menu-item" ><a title="Register or Login" href="{{ route('login') }}">Login</a></li>
+                                    <li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">Register</a></li>
                                 @endif
+                            @endif
 
 							</ul>
 						</div>
@@ -159,7 +143,7 @@
 				</div>
 
 				<div class="nav-section header-sticky">
-					<div class="header-nav-section">
+					{{-- <div class="header-nav-section">
 						<div class="container">
 							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info" >
 								<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span class="nav-label hot-label">hot</span></li>
@@ -169,8 +153,7 @@
 								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
 							</ul>
 						</div>
-					</div>
-
+					</div> --}}
 					<div class="primary-nav-section">
 						<div class="container">
 							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
@@ -187,7 +170,7 @@
 									<a href="{{ route('product.cart') }}" class="link-term mercado-item-title">Cart</a>
 								</li>
 								<li class="menu-item">
-									<a href="{{ route('product.checkout') }}" class="link-term mercado-item-title">Checkout</a>
+									<a href="{{ route('checkout') }}" class="link-term mercado-item-title">Checkout</a>
 								</li>
 								<li class="menu-item">
 									<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
@@ -200,9 +183,93 @@
 		</div>
 	</header>
 
+{{--start header section --}}
+    {{-- <header>
+        <div class="container">
+            <div class="top-nav">
+                <ul>
+                    <li>Experten Hotline 0800/1234567890</li>
+                    <li>Geld-zuruck-Garantie</li>
+                    <li>Gunstiger Blitzversand</li>
+                    <li>Kauf auf Rechnung</li>
+                </ul>
+            </div>
+            <div class="main-nav">
+                <ul>
+                    <li>
+                        <h1>LOGO</h1>
+                    </li>
+
+                    <li><input type="text" placeholder="search"></li>
+
+                    <li class="nav-icons" style="font-size: 1.2rem;">
+                        <span class="icon">
+                            <i class="fas fa-heart fa-lg"></i>
+                            <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+                        </span>
+                        <span class="icon">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+                        </span>
+                        <span class="icon">Items - $0.00</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-nav">
+                <ul>
+                    <li><a href="">Angbote</a></li>
+                    <li><a href="">Spezialitaten</a></li>
+                    <li><a href="">OBST & GEMUSE</a></li>
+                    <li><a href="">Pasta mix</a></li>
+                    <li><a href="">Pizza</a></li>
+                    <li><a href="">ole</a></li>
+                    <li><a href="">blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </header> --}}
+
+{{-- end header section --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {{ $slot  }}
 
-	<footer id="footer">
+	{{-- <footer id="footer">
 		<div class="wrap-footer-content footer-style-1">
 
 			<div class="wrap-function-info">
@@ -277,7 +344,7 @@
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 
-							<div class="wrap-footer-item">
+							{{-- <div class="wrap-footer-item">
 								<h3 class="item-header">Hot Line</h3>
 								<div class="item-content">
 									<div class="wrap-hotline-footer">
@@ -285,9 +352,9 @@
 										<b class="phone-number">(+123) 456 789 - (+123) 666 888</b>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
-							<div class="wrap-footer-item footer-item-second">
+							{{-- <div class="wrap-footer-item footer-item-second">
 								<h3 class="item-header">Sign up for newsletter</h3>
 								<div class="item-content">
 									<div class="wrap-newletter-footer">
@@ -299,9 +366,9 @@
 								</div>
 							</div>
 
-						</div>
+						</div> --}}
 
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
+						{{-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
 							<div class="row">
 								<div class="wrap-footer-item twin-item">
 									<h3 class="item-header">My Account</h3>
@@ -332,9 +399,9 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 
-					</div>
+					{{-- </div>
 
 					<div class="row">
 
@@ -455,6 +522,78 @@
 			</div>
 		</div>
 	</footer>
+    --}}
+
+
+
+
+{{-- start footer --}}
+<footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="http://scanfcode.com/about/">About Us</a></li>
+            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+       <a href="#">Scanfcode</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+{{-- end footer --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
@@ -465,6 +604,14 @@
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
 	<script src="{{ asset('assets/js/functions.js') }}"></script>
+
+	<script src="{{ asset('assets/js/carosel.js') }}"></script>
+	{{-- <script src="{{ asset('assets/js/jquery.js') }}"></script> --}}
+	{{-- <script src="{{ asset('assets/js/jquery.slim.js') }}"></script> --}}
+	<script src="{{ asset('assets/js/slider.js') }}"></script>
+	<script src="{{ asset('assets/js/slick.js') }}"></script>
+	<script src="{{ asset('assets/js/tabs.js') }}"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>

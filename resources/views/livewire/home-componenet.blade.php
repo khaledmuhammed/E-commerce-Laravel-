@@ -1,4 +1,4 @@
-<main id="main">
+{{-- <main id="main">
     <div class="container">
 
         <!--MAIN SLIDE-->
@@ -148,4 +148,279 @@
 
     </div>
 
-</main>
+</main> --}}
+
+
+{{-- @foreach ($sliders as $slide)
+<div class="item-slide">
+    <img src="{{asset('assets/images/sliders')}}/{{$slide->image}}" alt="" class="img-slide">
+    <div class="slide-info slide-1">
+        <h2 class="f-title"><b>{{ $slide->title }}</b></h2>
+        <span class="subtitle">{{ $slide->subtitle }}</span>
+        <p class="sale-info">Only price: <span class="price">${{ $slide->price }}</span></p>
+        <a href="{{ $slide->link }}" class="btn-link">Shop Now</a>
+    </div>
+</div>
+@endforeach --}}
+
+
+{{-- start home page --}}
+<body style="background-color: #e8e9ee;">
+    <div class="container" >
+
+                <div class="slider" style="border 1px;">
+                    <div class="slideshow-container p-2"  style="border: 2px solid black;">
+                        <!-- Full-width images with number and caption text -->
+                        @foreach ($sliders as $slide)
+                            <div class="mySlides fade">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="{{asset('assets/images/sliders')}}/{{$slide->image}}" style="width:100%">
+                            <div class="text">{{ $slide->title }}</div>
+                            </div>
+                        @endforeach
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+
+                </div>
+
+    </div>
+</body>
+<body>
+<div class="top-products">
+    <div class="container">
+        <div class="categories">
+            <h1>TOP PRODUCTS</h1>
+            <ul>
+                <li onmousedown="openTab(event,'Allproducts')" id="defaultOpen">ALL PRODUCTS</li>
+                <li onmousedown="openTab(event,'FRUITS')">FRUITS</li>
+                <li>VEGETABLES</li>
+                <li>FAST FOOD</li>
+                <li>DESSERTS</li>
+                <li>DRINKS</li>
+            </ul>
+        </div>
+        <div class="tabs">
+            <div id="Allproducts" class="tab" style="display: flex;">
+                    <div class="card">
+                        <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="" style="width:100%">
+                        <div class="card-content">
+                            <h2 class="title">CHIVKEN NOODELS</h2>
+                            <div class="divider"></div>
+                            <span class="price">$25.00</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="" style="width:100%">
+                        <div class="card-content">
+                            <h2 class="title">CHIVKEN NOODELS</h2>
+                            <div class="divider"></div>
+                            <span class="price">$25.00</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="" style="width:100%">
+                        <div class="card-content">
+                            <h2 class="title">CHIVKEN NOODELS</h2>
+                            <div class="divider"></div>
+                            <span class="price">$25.00</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="" style="width:100%">
+                        <div class="card-content">
+                            <h2 class="title">CHIVKEN NOODELS</h2>
+                            <div class="divider"></div>
+                            <span class="price">$25.00</span>
+                        </div>
+                    </div>
+            </div>
+            <div id="FRUITS" class="tab">
+                    <div class="card">
+                        <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="" style="width:100%">
+                        <div class="card-content">
+                            <h2 class="title">FRUITS</h2>
+                            <div class="divider"></div>
+                            <span class="price">$25.00</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="" style="width:100%">
+                        <div class="card-content">
+                            <h2 class="title">FRUITS</h2>
+                            <div class="divider"></div>
+                            <span class="price">$25.00</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="" style="width:100%">
+                        <div class="card-content">
+                            <h2 class="title">FRUITS</h2>
+                            <div class="divider"></div>
+                            <span class="price">$25.00</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="" style="width:100%">
+                        <div class="card-content">
+                            <h2 class="title">FRUITS</h2>
+                            <div class="divider"></div>
+                            <span class="price">$25.00</span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="benefits">
+    <div class="container">
+        <ul>
+            <li>
+                <span><i class="fas fa-shopping-cart fa-2x"></i></span>
+                <h2>title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, obcaecati molestiae sit
+                    quidem rem assumenda ea
+                    reiciendis. Numquam deserunt libero quasi dolore voluptate? Quas consequuntur aliquid dolore,
+                    nisi ex maxime.</p>
+            </li>
+            <li>
+                <span><i class="fas fa-shopping-cart fa-2x"></i></span>
+                <h2>title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, obcaecati molestiae sit
+                    quidem rem assumenda ea
+                    reiciendis. Numquam deserunt libero quasi dolore voluptate? Quas consequuntur aliquid dolore,
+                    nisi ex maxime.</p>
+            </li>
+            <li>
+                <span><i class="fas fa-shopping-cart fa-2x"></i></span>
+                <h2>title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, obcaecati molestiae sit
+                    quidem rem assumenda ea
+                    reiciendis. Numquam deserunt libero quasi dolore voluptate? Quas consequuntur aliquid dolore,
+                    nisi ex maxime.</p>
+            </li>
+            <li>
+                <span><i class="fas fa-shopping-cart fa-2x"></i></span>
+                <h2>title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, obcaecati molestiae sit
+                    quidem rem assumenda ea
+                    reiciendis. Numquam deserunt libero quasi dolore voluptate? Quas consequuntur aliquid dolore,
+                    nisi ex maxime.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <h1>title</h1>
+    <!--slider-->
+        <div class="carousel">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+        </div>
+        <div class="carousel">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
+            <img src="{{ asset('') }}" alt="">
+        </div>
+        <div class="carousel">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+        </div>
+</div>
+<div class="sale-section">
+    <div class="container inner-sale">
+        <div>0$ versand weltweit <br> ab 90$ Bestsellwert</div>
+        <div>0$ versand weltweit <br> ab 90$ Bestsellwert</div>
+    </div>
+</div>
+<!--slider-->
+<div class="container">
+    <h1>title</h1>
+    <!--slider-->
+        <div class="carousel">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+        </div>
+        <div class="carousel">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+        </div>
+        <div class="carousel">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+        </div>
+</div>
+<div class="hero-img">
+        <div class="container">
+            <div class="inner-hero">
+                <div>0$ versand weltweit <br> ab 90$ Bestsellwert</div>
+                <div>0$ versand weltweit <br> ab 90$ Bestsellwert</div>
+            </div>
+        </div>
+</div>
+<div class="features">
+    <div class="container">
+        <h1>Unsere Garantien an sie</h1>
+        <div class="inner-features">
+            <div class="feature">
+                <i class="fas fa-money-bill-alt fa-2x" style="color: rgb(142 206 146);"></i>
+                <div>Kauf auf</div>
+                <div class="divider"></div>
+                <span>Rechnung</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-truck fa-2x" style="color: rgb(142 206 146);"></i>
+                <div>Kauf auf</div>
+                <div class="divider"></div>
+                <span>Rechnung</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shopping-basket fa-2x" style="color: rgb(142 206 146);"></i>
+                <div>Kauf auf</div>
+                <div class="divider"></div>
+                <span>Rechnung</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-calendar-alt fa-2x" style="color: rgb(142 206 146);"></i>
+                <div>Kauf auf</div>
+                <div class="divider"></div>
+                <span>Rechnung</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="newsletter">
+    <div class="container">
+        <h1>Zum newsletter anmelden</h1>
+        <div class="newsletter-box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aut tempore quia reiciendis veniam ea
+                consequuntur mollitia fugit, porro nesciunt incidunt unde! Doloribus corporis sapiente nisi vel
+                totam nobis temporibus?</p>
+            <input type="text" name="" id="" placeholder="E-mail">
+            <button><i class="fas fa-envelope"></i></button>
+        </div>
+    </div>
+</div>
+</body>
+{{-- <div class="brand-imgs">
+    <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+    <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+    <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+    <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+</div> --}}
+
+{{-- end home page --}}
+
