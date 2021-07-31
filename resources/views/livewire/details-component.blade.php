@@ -312,7 +312,7 @@
                 </div>
                 <div class="product-info col-md-4">
                     <h1>{{ $product->name }}</h1>
-                    <p class="text-secondary">{{ $product->description }}</p>
+                    <p class="text-secondary">{{ $product->short_description }}</p>
                     <h1 class="font-weight-bold">${{ $product->regular_price }}</h1>
                     <a href="#" class="btn btn-dark mt-3 cs-btn-details text-white" wire:click.prevent="store({{ $product->id }}, '{{$product->name}}',{{ $product->regular_price }})">Add To Cart</a>
                 </div>
@@ -351,7 +351,12 @@
         </div>
     </div>
 </div>
->
+<div class="container">
+    <h2 class="fs-1" style="font-weight: bold;">{{ $product->name }}</h2>
+<div class="row" style="margin-top: 5rem">
+    <div class="fs-3" style="margin-bottom: 17.5rem!important;">{{ $product->description }}</div>
+</div>
+</div>
 </body>
 </main>
 {{-- end product details section --}}
