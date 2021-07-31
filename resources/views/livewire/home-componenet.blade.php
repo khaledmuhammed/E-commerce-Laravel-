@@ -165,8 +165,8 @@
 
 
 {{-- start home page --}}
-<body style="background-color: #e8e9ee;">
-    <div class="container" >
+<body >
+    <div class="container" style="background-color: #f6f6f6!important;">
 
                 <div class="slider" style="border 1px;">
                     <div class="slideshow-container p-2"  style="border: 2px solid black;">
@@ -188,7 +188,7 @@
 
     </div>
 </body>
-<body>
+<body style="background-color: white!important;">
 <div class="top-products">
     <div class="container">
         <div class="categories">
@@ -278,7 +278,7 @@
     <div class="container">
         <ul>
             <li>
-                <span><i class="fas fa-shopping-cart fa-2x"></i></span>
+                <span><i class="fas fa-trophy fa-2x"></i></span>
                 <h2>title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, obcaecati molestiae sit
                     quidem rem assumenda ea
@@ -286,7 +286,7 @@
                     nisi ex maxime.</p>
             </li>
             <li>
-                <span><i class="fas fa-shopping-cart fa-2x"></i></span>
+                <span><i class="fab fa-pagelines fa-2x"></i></span>
                 <h2>title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, obcaecati molestiae sit
                     quidem rem assumenda ea
@@ -294,7 +294,7 @@
                     nisi ex maxime.</p>
             </li>
             <li>
-                <span><i class="fas fa-shopping-cart fa-2x"></i></span>
+                <span><i class="fas fa-cloud-rain fa-2x"></i></span>
                 <h2>title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, obcaecati molestiae sit
                     quidem rem assumenda ea
@@ -302,7 +302,7 @@
                     nisi ex maxime.</p>
             </li>
             <li>
-                <span><i class="fas fa-shopping-cart fa-2x"></i></span>
+                <span><i class="fas fa-basketball-ball fa-2x"></i></span>
                 <h2>title</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, obcaecati molestiae sit
                     quidem rem assumenda ea
@@ -325,7 +325,7 @@
             <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
             <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
             <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
-            <img src="{{ asset('') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
         </div>
         <div class="carousel">
             <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
@@ -344,18 +344,20 @@
 <div class="container">
     <h1>title</h1>
     <!--slider-->
+        <div class="carousel" >
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
+            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
+        </div>
+        <h1>title</h1>
         <div class="carousel">
             <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
             <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
             <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
             <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
         </div>
-        <div class="carousel">
-            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
-            <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
-            <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
-            <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
-        </div>
+        <h1>title</h1>
         <div class="carousel">
             <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
             <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
@@ -363,7 +365,7 @@
             <img src="{{ asset('assets/images/foodShop/img1.jpg') }}" alt="">
         </div>
 </div>
-<div class="hero-img">
+<div class="hero-img" style="height: 50rem;">
         <div class="container">
             <div class="inner-hero">
                 <div>0$ versand weltweit <br> ab 90$ Bestsellwert</div>
@@ -371,7 +373,7 @@
             </div>
         </div>
 </div>
-<div class="features">
+<div class="features" style="height: 50rem;">
     <div class="container">
         <h1>Unsere Garantien an sie</h1>
         <div class="inner-features">

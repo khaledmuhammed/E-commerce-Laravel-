@@ -8294,3 +8294,10 @@ div.newsletter-box button{
   padding-right: 15px;
   border: 0;
 }
+.cs-background :hover{
+    background-color: #baff00!important;
+}
+.cs-btn-details :hover{
+
+color:white!important;
+}

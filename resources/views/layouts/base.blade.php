@@ -10,6 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
@@ -115,7 +116,7 @@
 					</div>
 				</div>
 
-				<div class="container">
+				{{-- <div class="container">
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
@@ -123,7 +124,7 @@
 						</div>
 
                         {{-- calling search component --}}
-                        @livewire('header-search-component');
+                        {{-- @livewire('header-search-component');
 
 						<div class="wrap-icon right-section">
                              @livewire('wishlist-count-component')
@@ -131,8 +132,8 @@
                              @livewire('cart-count-component')
 
 							<div class="wrap-icon-section show-up-after-1024">
-								<a href="#" class="mobile-navigation">
-									<span></span>
+								<a href="#" class="mobile-navigation"> --}}
+									{{-- <span></span>
 									<span></span>
 									<span></span>
 								</a>
@@ -140,25 +141,14 @@
 						</div>
 
 					</div>
-				</div>
+				</div>  --}}
 
 				<div class="nav-section header-sticky">
-					{{-- <div class="header-nav-section">
-						<div class="container">
-							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info" >
-								<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top new items</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top Selling</a><span class="nav-label hot-label">hot</span></li>
-								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
-							</ul>
-						</div>
-					</div> --}}
 					<div class="primary-nav-section">
 						<div class="container">
 							<ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu" >
-								<li class="menu-item home-icon">
-									<a href="/" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
+								<li class="menu-item home-icon" style="background-color: #e8e9eec7!important;">
+									<a href="/" class="link-term mercado-item-title" ><i class="fa fa-home" aria-hidden="true"></i></a>
 								</li>
 								<li class="menu-item">
 									<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
@@ -184,7 +174,7 @@
 	</header>
 
 {{--start header section --}}
-    {{-- <header>
+    <header>
         <div class="container">
             <div class="top-nav">
                 <ul>
@@ -200,16 +190,15 @@
                         <h1>LOGO</h1>
                     </li>
 
-                    <li><input type="text" placeholder="search"></li>
+                    {{-- <li><input type="text" placeholder="search"></li> --}}
+                    <li>@livewire('header-search-component');</li>
 
                     <li class="nav-icons" style="font-size: 1.2rem;">
                         <span class="icon">
-                            <i class="fas fa-heart fa-lg"></i>
-                            <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+                            @livewire('wishlist-count-component')
                         </span>
                         <span class="icon">
-                            <i class="fas fa-shopping-cart fa-lg"></i>
-                            <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+                            @livewire('cart-count-component')
                         </span>
                         <span class="icon">Items - $0.00</span>
                     </li>
@@ -217,51 +206,16 @@
             </div>
             <div class="bottom-nav">
                 <ul>
-                    <li><a href="">Angbote</a></li>
-                    <li><a href="">Spezialitaten</a></li>
-                    <li><a href="">OBST & GEMUSE</a></li>
-                    <li><a href="">Pasta mix</a></li>
-                    <li><a href="">Pizza</a></li>
-                    <li><a href="">ole</a></li>
-                    <li><a href="">blog</a></li>
+                    @php $categories = App\Models\Category::all();@endphp
+                    @foreach ($categories as $cat)
+                        <li class="cs-background"><a href="" >{{ $cat->name }}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </div>
-    </header> --}}
+    </header>
 
 {{-- end header section --}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -592,6 +546,11 @@
 
 
 
+{{-- <script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/slick.js"></script>
+<script src="scripts/carosel.js"></script>
+<script src="scripts/slider.js"></script>
+<script src="scripts/tabs.js"></script --}}
 
 
 
@@ -603,14 +562,17 @@
 	<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('assets/js/slider.js') }}"></script>
+
 	<script src="{{ asset('assets/js/functions.js') }}"></script>
+
+	<script src="{{ asset('assets/js/slick.js') }}"></script>
+	<script src="{{ asset('assets/js/tabs.js') }}"></script>
 
 	<script src="{{ asset('assets/js/carosel.js') }}"></script>
 	{{-- <script src="{{ asset('assets/js/jquery.js') }}"></script> --}}
 	{{-- <script src="{{ asset('assets/js/jquery.slim.js') }}"></script> --}}
-	<script src="{{ asset('assets/js/slider.js') }}"></script>
-	<script src="{{ asset('assets/js/slick.js') }}"></script>
-	<script src="{{ asset('assets/js/tabs.js') }}"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 

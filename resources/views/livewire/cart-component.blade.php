@@ -60,9 +60,9 @@
                     <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{ Cart::instance('cart')->total() }}</b></p>
                 </div>
                 <div class="checkout-info">
-                    <label class="checkbox-field">
+                    {{-- <label class="checkbox-field">
                         <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span>
-                    </label>
+                    </label> --}}
                     {{-- checkout btn --}}
                     <a class="btn btn-checkout" href="#" wire:click.prevent="checkout">Check out</a>
 

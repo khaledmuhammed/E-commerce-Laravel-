@@ -1,4 +1,4 @@
-<main id="main" class="main-site">
+{{-- <main id="main" class="main-site">
 
     <div class="container">
 
@@ -30,6 +30,7 @@
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <a href="#" class="count-review">(05 review)</a>
                         </div>
+
                         <h2 class="product-name">{{ $product->name }}</h2>
                         <div class="short-desc">
                             {!! $product->short_description !!}
@@ -279,4 +280,78 @@
 
     </div><!--end container-->
 
+</main> --}}
+
+
+
+
+
+
+
+{{-- start product details section --}}
+<main id="main" class="main-site">
+<body onload="showSlides()">
+    <div class="container">
+    <div class="hero">
+        <h1>Angbote > Manuka Honig</h1>
+    </div>
+    <div class="product-section m-5">
+        <div class="container">
+            <div class="product-details row">
+                <div class="slider-wrap col-md-4 ">
+                    <div class="slider-for mySlides">
+                        <img src="{{ asset('../assets/images/foodShop/img1.jpg') }}" alt="">
+                        <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+                        <img src="{{ asset('assets/images/foodShop/img3.jpg') }}" alt="">
+                      </div>
+                      <div class="slider-nav mySlides">
+                        <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+                        <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+                        <img src="{{ asset('assets/images/foodShop/img2.jpg') }}" alt="">
+                      </div>
+                </div>
+                <div class="product-info col-md-4">
+                    <h1>{{ $product->name }}</h1>
+                    <p class="text-secondary">{{ $product->description }}</p>
+                    <h1 class="font-weight-bold">${{ $product->regular_price }}</h1>
+                    <a href="#" class="btn btn-dark mt-3 cs-btn-details text-white" wire:click.prevent="store({{ $product->id }}, '{{$product->name}}',{{ $product->regular_price }})">Add To Cart</a>
+                </div>
+
+                <div class="product-features col-md-4" style="font-size: 18px;">
+                    <div class="d-flex">
+                        <i class="fas fa-heart fa-3x"></i>
+                        <div style="padding-left: 25px;">
+                            <span>Qualitat</span>
+                            <p>Hochwertiges Sortiment</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fas fa-check fa-3x"></i>
+                        <div style="padding-left: 25px;">
+                            <span>Qualitat</span>
+                            <p>Hochwertiges Sortiment</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fas fa-truck fa-3x"></i>
+                        <div style="padding-left: 25px;">
+                            <span>Qualitat</span>
+                            <p>Hochwertiges Sortiment</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <i class="fas fa-comment-alt fa-3x"></i>
+                        <div style="padding-left: 25px;">
+                            <span>Qualitat</span>
+                            <p>Hochwertiges Sortiment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+>
+</body>
 </main>
+{{-- end product details section --}}
