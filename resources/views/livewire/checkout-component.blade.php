@@ -155,8 +155,9 @@
                         <p class="summary-info"><span class="title">Credit Cart (saved)</span></p>
                         <div class="choose-payment-methods">
                             <label class="payment-method">
-                                <input name="payment-method" id="payment-method-bank" value="cod" type="radio" wire:model="payment_method">
-                                <span>Cash on Delivery</span>
+                                <input name="payment-method" id="payment-method-bank"  value="cod" type="radio" wire:model="payment_method" >
+                                <span >Cash on Delivery</span>
+                                @error('payment_method') <span class="text-danger" style="display: block;">{{ $message }}</span>@enderror
                                 <span class="payment-desc">Order Now and Pay on Delivery</span>
                             </label>
                             {{-- <label class="payment-method">

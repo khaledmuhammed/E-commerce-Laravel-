@@ -200,7 +200,7 @@
                         <span class="icon">
                             @livewire('cart-count-component')
                         </span>
-                        <span class="icon">Items - $0.00</span>
+                        <span class="icon">Items - ${{ Cart::instance('cart')->total() }}</span>
                     </li>
                 </ul>
             </div>
